@@ -14,13 +14,10 @@
 
     </corners>
 
-    <stroke
-        android:width="3px"
-        android:color="@color/negro">
-    </stroke>
+
 
     <solid
-        android:color="@color/azul">
+        android:color="#CB137DFF">
 
     </solid>
 </shape>

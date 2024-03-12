@@ -76,8 +76,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@color/transparente"
-                android:text="¿No tienes cuenta?, Registrate"
+                android:text="¿No tienes cuenta?"
                 android:textColor="@color/negro" />
+
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/invitado"
