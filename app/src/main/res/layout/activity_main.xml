@@ -25,11 +25,11 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:background="@drawable/degradado_azul"
-
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+
+                android:layout_height="296dp"
                 android:layout_weight="1"
+                android:background="@drawable/degradado_azul"
                 android:gravity="center" />
         </LinearLayout>
 
@@ -59,6 +59,18 @@
                 android:ems="10"
                 android:gravity="center"
                 android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:textColorHint="@color/negro" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/botonInicioSesion"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:background="@drawable/boton_azul"
+                android:ems="10"
+                android:gravity="center"
+                android:layout_marginTop="50px"
+                android:textSize="20dp"
+                android:hint="Iniciar sesion"
                 android:inputType="textPassword"
                 android:textColorHint="@color/negro" />
 

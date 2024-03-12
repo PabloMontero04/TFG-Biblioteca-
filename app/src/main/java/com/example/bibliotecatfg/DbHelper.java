@@ -1,5 +1,6 @@
 package com.example.bibliotecatfg;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -50,7 +51,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
         // Crear tabla Usuarios
         db.execSQL("CREATE TABLE " + TABLE_USUARIO + "(" +
-                "id_usuario INTEGER PRIMARY KEY," +
+                "id_usuario INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "nombre TEXT NOT NULL," +
                 "apellido TEXT NOT NULL," +
                 "DNI TEXT NOT NULL," +
@@ -59,9 +60,34 @@ public class DbHelper extends SQLiteOpenHelper {
                 "direccion TEXT NOT NULL," +
                 "contraseña TEXT NOT NULL," +
                 "administrador BOOLEAN NOT NULL," +
-                "id_biblioteca INTEGER NOT NULL," +
+                "id_biblioteca INTEGER NOT NULL DEFAULT 1," + // Valor predeterminado para id_biblioteca
                 "FOREIGN KEY (id_biblioteca) REFERENCES " + TABLE_BIBLIOTECA + "(id_biblioteca))");
+
+        // Insertar usuario por defecto
+        ContentValues valuesUsuario = new ContentValues();
+        valuesUsuario.put("nombre", "Admin");
+        valuesUsuario.put("apellido", "Admin");
+        valuesUsuario.put("DNI", "12345678A");
+        valuesUsuario.put("correo", "admin@example.com");
+        valuesUsuario.put("telefono", "123456789");
+        valuesUsuario.put("direccion", "Dirección del admin");
+        valuesUsuario.put("contraseña", "admin123");
+        valuesUsuario.put("administrador", true);
+        db.insert(TABLE_USUARIO, null, valuesUsuario);
+
+        // Insertar administrador por defecto
+        ContentValues valuesAdmin = new ContentValues();
+        valuesAdmin.put("nombre", "Usuario");
+        valuesAdmin.put("apellido", "Usuario");
+        valuesAdmin.put("DNI", "12345678B");
+        valuesAdmin.put("correo", "usuario@example.com");
+        valuesAdmin.put("telefono", "987654321");
+        valuesAdmin.put("direccion", "Dirección del usuario");
+        valuesAdmin.put("contraseña", "123");
+        valuesAdmin.put("administrador", false);
+        db.insert(TABLE_USUARIO, null, valuesAdmin);
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
