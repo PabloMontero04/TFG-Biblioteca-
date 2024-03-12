@@ -3,7 +3,24 @@
     <style name="Base.Theme.BibliotecaTFG" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <item name="android:statusBarColor">@color/azul</item>
+    </style>
+    <style name="BottomNavigation">
+
+        <item name="android:background">#E4000000</item>
+        <item name="itemIconTint">@color/azul</item>
+        <item name="itemTextColor">@color/azul</item>
+
     </style>
 
+    <style name="Theme.BibliotecaTFG.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
     <style name="Theme.BibliotecaTFG" parent="Base.Theme.BibliotecaTFG" />
+
+    <style name="Theme.BibliotecaTFG.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.BibliotecaTFG.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

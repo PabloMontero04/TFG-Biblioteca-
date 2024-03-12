@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityRegistro">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/degradado_azul"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="600dp"
+        android:layout_marginHorizontal="65dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/editTextTextnombre"
+            android:layout_width="272dp"
+            android:layout_height="61dp"
+            android:background="@drawable/boton_blanco"
+            android:ems="10"
+            android:hint="Nombre"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textColorHint="@color/negro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <EditText
+            android:id="@+id/editTextTextapellido"
+            android:layout_width="272dp"
+            android:layout_height="61dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/boton_blanco"
+            android:ems="10"
+            android:hint="Apellido"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textColorHint="@color/negro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextnombre" />
+
+        <EditText
+            android:id="@+id/editTextTextDNI"
+            android:layout_width="272dp"
+            android:layout_height="61dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/boton_blanco"
+            android:ems="10"
+            android:hint="DNI"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textColorHint="@color/negro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextapellido" />
+
+        <EditText
+            android:id="@+id/editTextTexcorreo"
+            android:layout_width="272dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Correo"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            android:background="@drawable/boton_blanco"
+            android:textColorHint="@color/negro"
+            android:textColor="@color/negro"
+            android:textDirection="firstStrongRtl"
+            android:textIsSelectable="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextDNI" />
+
+        <EditText
+            android:id="@+id/editTextTexDireccion"
+            android:layout_width="272dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Dirección"
+            android:inputType="textPostalAddress"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            android:background="@drawable/boton_blanco"
+            android:textColorHint="@color/negro"
+            android:textColor="@color/negro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTexcorreo" />
+
+        <EditText
+            android:id="@+id/editTextTexTelefono"
+            android:layout_width="272dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Telefono"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            android:background="@drawable/boton_blanco"
+            android:textColorHint="@color/negro"
+            android:textColor="@color/negro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTexDireccion" />
+
+        <EditText
+            android:id="@+id/editTextTexcontrasenia"
+            android:layout_width="272dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            android:background="@drawable/boton_blanco"
+            android:textColorHint="@color/negro"
+            android:textColor="@color/negro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTexTelefono" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/Registro"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/boton_azul"
+            android:text="Registrar"
+            android:textColor="@color/negro" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
