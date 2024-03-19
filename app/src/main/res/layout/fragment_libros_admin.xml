@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentLibrosAdmin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/AñadirLibro"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="175dp"
+            android:background="@drawable/boton_azul"
+            android:ems="10"
+            android:layout_marginBottom="50dp"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:hint="Añadir Libro"
+            android:textColorHint="@color/negro" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ModificarLibro"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/boton_azul"
+            android:ems="10"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:hint="Modificar Libro"
+            android:textColorHint="@color/negro" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/EliminarLibro"
+            android:layout_width="250dp"
+            android:layout_marginBottom="50dp"
+
+            android:layout_height="50dp"
+            android:background="@drawable/boton_azul"
+            android:ems="10"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:hint="Eliminar Libro"
+            android:inputType="textPassword"
+            android:textColorHint="@color/negro" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ListarLibro"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:background="@drawable/boton_azul"
+            android:ems="10"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:hint="Listar Libros"
+            android:inputType="textPassword"
+            android:textColorHint="@color/negro" />
+
+    </LinearLayout>
+</FrameLayout>

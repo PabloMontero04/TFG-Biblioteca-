@@ -71,7 +71,6 @@
                 android:layout_marginTop="50px"
                 android:textSize="20dp"
                 android:hint="Iniciar sesion"
-                android:inputType="textPassword"
                 android:textColorHint="@color/negro" />
 
         </LinearLayout>
