@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+        <item
+            android:id="@+id/perfil"
+            android:icon="@drawable/usuario"
+            android:title="Perfil"
+            android:clickable="true" />
+        <item
+            android:id="@+id/pedidos"
+            android:icon="@drawable/carrito"
+            android:title="Pedidos"
+            android:clickable="true" />
+        <item
+            android:id="@+id/sesion"
+            android:icon="@android:drawable/ic_lock_idle_lock"
+            android:title="Cerrar Sesión"
+            android:clickable="true"
+            android:checkable="true" />
+    </menu>

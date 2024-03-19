@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/Producto"
+        android:icon="@drawable/usuario"
+        android:title="Producto"/>
+    <item
+        android:id="@+id/Usuario"
+        android:icon="@drawable/usuario"
+        android:title="Usuario"/>
+    <item
+        android:id="@+id/Repartidor"
+        android:icon="@drawable/usuario"
+        android:title="Repartidor"/>
+    <item
+        android:id="@+id/Incidencias"
+        android:icon="@drawable/usuario"
+        android:title="Incidencias"/>
+    <item
+        android:id="@+id/Conexion"
+        android:icon="@drawable/usuario"
+        android:title="Conexion"/>
+
+
+</menu>
