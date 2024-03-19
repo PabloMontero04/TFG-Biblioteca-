@@ -19,18 +19,57 @@ import com.google.android.material.navigation.NavigationView;
 public class MenuPrincipal extends AppCompatActivity {
 
     private FragmentUno fragmentUno;
+    private FragmentDos fragmentDos;
+    private FragmentTres fragmentTres;
+    private FragmentCuatro fragmentCuatro;
+    private FragmentCinco fragmentCinco;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menuprincipal);
 
-        // Inicializa el FragmentUno
+        // Inicializar los fragmentos
         fragmentUno = new FragmentUno();
+        fragmentDos = new FragmentDos();
+        fragmentTres = new FragmentTres();
+        fragmentCuatro = new FragmentCuatro();
+        fragmentCinco = new FragmentCinco();
 
-        // Carga el FragmentUno
+        // Cargar el FragmentUno por defecto
+        loadFragment(fragmentUno);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.uno) {
+                    loadFragment(fragmentUno);
+                    return true;
+                } else if (itemId == R.id.dos) {
+                    loadFragment(fragmentDos);
+                    return true;
+                } else if (itemId == R.id.tres) {
+                    loadFragment(fragmentTres);
+                    return true;
+                } else if (itemId == R.id.cuatro) {
+                    loadFragment(fragmentCuatro);
+                    return true;
+                } else if (itemId == R.id.cinco) {
+                    loadFragment(fragmentCinco);
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
-    // Método para cargar un fragmento en el contenedor
-
+        // Método para cargar un fragmento en el contenedor
+    private void loadFragment(Fragment fragment) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
 }
