@@ -1,25 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/Producto"
-        android:icon="@drawable/usuario"
-        android:title="Producto"/>
+        android:id="@+id/Libros"
+        android:icon="@drawable/libro"
+        android:title="Libros"/>
     <item
-        android:id="@+id/Usuario"
+        android:id="@+id/Usuarios"
         android:icon="@drawable/usuario"
-        android:title="Usuario"/>
+        android:title="Usuarios"/>
     <item
-        android:id="@+id/Repartidor"
-        android:icon="@drawable/usuario"
-        android:title="Repartidor"/>
-    <item
-        android:id="@+id/Incidencias"
-        android:icon="@drawable/usuario"
-        android:title="Incidencias"/>
-    <item
-        android:id="@+id/Conexion"
-        android:icon="@drawable/usuario"
-        android:title="Conexion"/>
+        android:id="@+id/Salir"
+        android:icon="@drawable/salida"
+        android:title="Salir"/>
+
 
 
 </menu>

@@ -13,8 +13,22 @@
         android:theme="@style/Theme.BibliotecaTFG"
         tools:targetApi="31">
         <activity
+            android:name=".EliminarUsuarioAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".ModificarUsuarioAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".ListarUsuarioAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".AnadirUsuarioAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".MenuAdministrador"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
-
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,9 +36,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActivityRegistro"></activity>
-        <activity android:name=".MenuPrincipal"></activity>
-
+        <activity android:name=".ActivityRegistro" />
+        <activity android:name=".MenuPrincipal" />
     </application>
 
 </manifest>

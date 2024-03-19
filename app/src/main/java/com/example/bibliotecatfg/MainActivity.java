@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     EditText editTextUsuario, editTextContrasenia;
     Button botonInicioSesion, botonRegistro, botonInvitado;
     private DbHelper dbHelper;
+    boolean esAdmin = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,17 +70,19 @@ public class MainActivity extends AppCompatActivity {
         String usuario = editTextUsuario.getText().toString();
         String contrasenia = editTextContrasenia.getText().toString();
 
-
         // Verificar si el usuario y la contraseña no están vacíos
         if (!usuario.isEmpty() && !contrasenia.isEmpty()) {
             // Acceder a la base de datos para verificar las credenciales del usuario
             if (verificarCredenciales(usuario, contrasenia)) {
-                int idUsuario = obtenerIdUsuario(usuario, contrasenia);
-                // Guardar el nombre de usuario en SharedPreferences
-                guardarUsuarioEnPrefs(idUsuario, usuario);
-                // Redirigir a la próxima actividad (por ejemplo, la pantalla principal de la aplicación)
-                // Aquí reemplaza "MenuPrincipal.class" con la clase de tu actividad principal
-                Intent intent = new Intent(MainActivity.this, MenuPrincipal.class);
+                // Si las credenciales son correctas, determinar la actividad a abrir
+                Intent intent;
+                if (esAdmin) {
+                    // Si el usuario es administrador, llevarlo a la actividad de administrador
+                    intent = new Intent(MainActivity.this, MenuAdministrador.class);
+                } else {
+                    // Si no es administrador, llevarlo a la actividad normal
+                    intent = new Intent(MainActivity.this, MenuPrincipal.class);
+                }
                 startActivity(intent);
                 // Finalizar la actividad actual
                 finish();
@@ -93,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+
     // Método para verificar las credenciales del usuario en la base de datos
     private boolean verificarCredenciales(String usuario, String contrasenia) {
         // Acceder a la base de datos en modo lectura
@@ -100,7 +105,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Especificar las columnas que deseamos consultar
         String[] projection = {
-                "id_usuario"
+                "id_usuario",
+                "administrador"
         };
 
         // Filtrar los resultados WHERE "nombre" = 'usuario' AND "contraseña" = 'contrasenia'
@@ -108,17 +114,24 @@ public class MainActivity extends AppCompatActivity {
         String[] selectionArgs = {usuario, contrasenia};
 
         // Realizar la consulta
-        Cursor cursor = db.query("Usuarios",projection,selection,selectionArgs,null, null, null);
+        Cursor cursor = db.query("Usuarios", projection, selection, selectionArgs, null, null, null);
 
         // Verificar si la consulta devolvió alguna fila
         boolean credencialesCorrectas = cursor.getCount() > 0;
+
+        // Obtener el valor de "administrador" si las credenciales son correctas
+        if (credencialesCorrectas && cursor.moveToFirst()) {
+            esAdmin = cursor.getInt(cursor.getColumnIndexOrThrow("administrador")) == 1;
+        }
 
         // Cerrar el cursor y la conexión a la base de datos
         cursor.close();
         db.close();
 
+        // Retornar si las credenciales son correctas
         return credencialesCorrectas;
     }
+
 
 
     private void guardarUsuarioEnPrefs(int idUsuario, String nombreUsuario) {
